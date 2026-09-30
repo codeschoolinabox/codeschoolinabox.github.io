@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <title>CodeSchool in a Box</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <meta
       name="description"
-      content="The translational research R&D layer that small technical education orgs and nonprofits are missing or can't afford. We prototype new interventions (software and pedagogy) with existing orgs, then hand off what works."
+      content="The translational research R&D layer that small technical education orgs and nonprofits are missing or can't afford. We work with you to prototype new interventions (software and pedagogy) then hand off what works."
     />
     <style>
       :root {
+        color-scheme: light dark;
         --bg: #fff;
         --fg: #1a1a1a;
         --muted: #555;
-        --link: #0b5cad;
+        --link: #0a4c94;
       }
       @media (prefers-color-scheme: dark) {
         :root {
@@ -33,7 +35,8 @@
         margin: 0;
         padding: 4rem 1rem;
       }
-      main {
+      main,
+      footer {
         max-width: 40rem;
         margin: 0 auto;
       }
@@ -44,6 +47,7 @@
         margin: 0 0 1.5rem;
       }
       header img {
+        flex: none;
         height: 4.5rem;
         width: 4.5rem;
       }
@@ -56,16 +60,39 @@
         color: var(--link);
         overflow-wrap: anywhere;
       }
-      .legal {
+      a:focus-visible {
+        outline: 3px solid currentColor;
+        outline-offset: 3px;
+      }
+      .email {
+        display: inline-block;
+        padding: 0.6rem 0;
+      }
+      footer {
         color: var(--muted);
         font-size: 0.95rem;
+        margin-top: 3rem;
+      }
+      footer p {
+        margin: 0 0 0.5rem;
+      }
+      footer a {
+        color: inherit;
+      }
+      @media print {
+        :root {
+          --bg: #fff;
+          --fg: #000;
+          --muted: #000;
+          --link: #000;
+        }
       }
     </style>
   </head>
   <body>
     <main>
       <header>
-        <img src="logo.png" alt="CodeSchool in a Box logo" />
+        <img src="logo.png" alt="" width="72" height="72" />
         <h1>CodeSchool in a Box</h1>
       </header>
       <p>
@@ -79,11 +106,18 @@
         an email!
       </p>
       <p>
-        <a href="mailto:info@codeschoolinabox.org">info@codeschoolinabox.org</a>
-      </p>
-      <p class="legal">
-        CodeSchool in a Box is a Minnesota 501(c)(3) nonprofit.
+        <a class="email" href="mailto:info@codeschoolinabox.org"
+          >info@codeschoolinabox.org</a
+        >
       </p>
     </main>
+    <footer>
+      <p>CodeSchool in a Box is a Minnesota 501(c)(3) nonprofit.</p>
+      <p>
+        Found an accessibility barrier on this site? Email
+        <a href="mailto:info@codeschoolinabox.org">info@codeschoolinabox.org</a
+        >.
+      </p>
+    </footer>
   </body>
 </html>
